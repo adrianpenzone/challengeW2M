@@ -7,7 +7,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.challenge.challengeW2M.model.SuperHeroe;
 
 public class SuperHeroeControllerTest extends AbstractTest {
 
@@ -20,28 +23,37 @@ public class SuperHeroeControllerTest extends AbstractTest {
 	@Test
 	public void getSuperHeroes() throws Exception {
 		String uri = "/superHeroes";
-		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
-				.accept(MediaType.APPLICATION_JSON_VALUE))
+		RequestBuilder requestBuilder = MockMvcRequestBuilders
+				.get(uri)
+				.accept(MediaType.APPLICATION_JSON_VALUE);
+		MvcResult mvcResult = mockMvc.perform(requestBuilder)
 				.andReturn();
 
 		int status = mvcResult.getResponse().getStatus();
 		assertEquals(200, status);
+		
 		String content = mvcResult.getResponse().getContentAsString();
 		SuperHeroe[] superHeroes = super.mapFromJson(content, SuperHeroe[].class);
 		assertTrue(superHeroes.length > 0);
 	}
-	
+
 	@Test
 	public void getSuperHeroesById() throws Exception {
 		String uri = "/superHeroes/1";
-		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
-				.accept(MediaType.APPLICATION_JSON_VALUE))
+		RequestBuilder requestBuilder = MockMvcRequestBuilders
+				.get(uri)
+				.accept(MediaType.APPLICATION_JSON_VALUE);
+		MvcResult mvcResult = mockMvc.perform(requestBuilder)
 				.andReturn();
 
 		int status = mvcResult.getResponse().getStatus();
 		assertEquals(200, status);
+		
 		String content = mvcResult.getResponse().getContentAsString();
-		SuperHeroe superHeroe = new SuperHeroe(1L, "SuperMan");
+		SuperHeroe superHeroe = new SuperHeroe();
+		superHeroe.setId(1L);
+		superHeroe.setNombre("Superman");
+		superHeroe.setPoder("super hombre");
 		assertEquals(content, super.mapToJson(superHeroe));
 	}
 

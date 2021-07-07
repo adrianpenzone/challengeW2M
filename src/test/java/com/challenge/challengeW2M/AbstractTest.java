@@ -20,12 +20,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @SpringBootTest(classes = com.challenge.challengeW2M.ChallengeW2MApplication.class)
 @WebAppConfiguration
 public abstract class AbstractTest {
-   protected MockMvc mvc;
+   protected MockMvc mockMvc;
    @Autowired
    WebApplicationContext webApplicationContext;
 
    protected void setUp() {
-      mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+      mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
    }
    protected String mapToJson(Object obj) throws JsonProcessingException {
       ObjectMapper objectMapper = new ObjectMapper();

@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,8 +20,8 @@ public class SuperHeroeService {
 	
 	
 	@Transactional(readOnly = true)
-	public List<SuperHeroe> findAll() {
-		return (List<SuperHeroe>) superHeroeDao.findAll();
+	public Page<SuperHeroe> findAll(Pageable pageable) {
+		return superHeroeDao.findAll(pageable);
 	}
 	
 	@Transactional(readOnly = true)
@@ -27,5 +29,19 @@ public class SuperHeroeService {
 		return superHeroeDao.findById(id);
 	}
 	
+	@Transactional(readOnly = true)
+	public List<SuperHeroe> findByNombreLike(String like){
+		return superHeroeDao.findByNombreContains(like);
+	}
+	
+	@Transactional
+	public SuperHeroe modificar(SuperHeroe superHeroe) {
+		return superHeroeDao.save(superHeroe);
+	}
+	
+	@Transactional
+	public void deleteById(Long id) {
+		superHeroeDao.deleteById(id);
+	}
 
 }

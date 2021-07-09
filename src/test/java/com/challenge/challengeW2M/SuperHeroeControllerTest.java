@@ -32,9 +32,6 @@ public class SuperHeroeControllerTest extends AbstractTest {
 		int status = mvcResult.getResponse().getStatus();
 		assertEquals(200, status);
 		
-		String content = mvcResult.getResponse().getContentAsString();
-		SuperHeroe[] superHeroes = super.mapFromJson(content, SuperHeroe[].class);
-		assertTrue(superHeroes.length > 0);
 	}
 
 	@Test

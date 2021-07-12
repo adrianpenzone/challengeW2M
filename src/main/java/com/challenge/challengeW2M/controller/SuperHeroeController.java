@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.challenge.challengeW2M.annotation.TrackExecutionTime;
+import com.challenge.challengeW2M.config.ApiPageable;
 import com.challenge.challengeW2M.model.SuperHeroe;
 import com.challenge.challengeW2M.service.SuperHeroeService;
 
@@ -27,6 +28,7 @@ public class SuperHeroeController {
 	private SuperHeroeService superHeroeService;
 	
 	@TrackExecutionTime
+	@ApiPageable
 	@GetMapping
 	public ResponseEntity<?> listar(Pageable pageable) {
 		return ResponseEntity.ok().body(superHeroeService.findAll(pageable));

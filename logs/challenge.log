@@ -1,0 +1,36 @@
+2021-07-12 17:55:26,212 INFO com.challenge.challengeW2M.ChallengeW2MApplication [restartedMain] Starting ChallengeW2MApplication using Java 11.0.2 on VirtualBox-Ubuntu with PID 8128 (/home/adrian/Environment/SpringToolSuite4-workspace/challengeW2M/target/classes started by adrian in /home/adrian/Environment/SpringToolSuite4-workspace/challengeW2M)
+2021-07-12 17:55:26,216 DEBUG com.challenge.challengeW2M.ChallengeW2MApplication [restartedMain] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-12 17:55:26,217 INFO com.challenge.challengeW2M.ChallengeW2MApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-07-12 17:55:26,305 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-12 17:55:26,308 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-12 17:55:27,804 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-12 17:55:27,876 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interfaces.
+2021-07-12 17:55:28,568 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2021-07-12 17:55:28,575 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-12 17:55:28,576 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2021-07-12 17:55:28,577 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-12 17:55:28,635 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-07-12 17:55:28,635 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2325 ms
+2021-07-12 17:55:28,704 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2021-07-12 17:55:28,795 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2021-07-12 17:55:28,803 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console-db'. Database available at 'jdbc:h2:mem:w2mdb'
+2021-07-12 17:55:29,023 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-12 17:55:29,048 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-12 17:55:29,117 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-12 17:55:29,197 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-12 17:55:29,743 INFO org.hibernate.tool.schema.internal.SchemaCreatorImpl [restartedMain] HHH000476: Executing import script 'file:/home/adrian/Environment/SpringToolSuite4-workspace/challengeW2M/target/classes/import.sql'
+2021-07-12 17:55:29,751 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-12 17:55:29,762 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-12 17:55:30,386 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-12 17:55:30,587 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-12 17:55:30,774 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-07-12 17:55:30,968 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-12 17:55:30,983 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-12 17:55:30,985 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2021-07-12 17:55:30,997 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2021-07-12 17:55:31,025 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2021-07-12 17:55:31,170 INFO com.challenge.challengeW2M.ChallengeW2MApplication [restartedMain] Started ChallengeW2MApplication in 5.645 seconds (JVM running for 6.802)
+2021-07-12 17:55:47,575 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-12 17:55:47,578 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2021-07-12 17:55:47,580 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2021-07-12 17:55:47,846 INFO com.challenge.challengeW2M.aop.ExecutionTimeAdvice [http-nio-8080-exec-2] Class Name: com.challenge.challengeW2M.controller.SuperHeroeController. Method Name: listar. Time taken for Execution is : 195ms

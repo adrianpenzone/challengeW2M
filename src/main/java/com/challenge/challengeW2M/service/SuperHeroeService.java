@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.challenge.challengeW2M.annotation.TrackExecutionTime;
 import com.challenge.challengeW2M.dao.SuperHeroeDao;
 import com.challenge.challengeW2M.model.SuperHeroe;
 
@@ -17,8 +18,7 @@ public class SuperHeroeService {
 	
 	@Autowired
 	private SuperHeroeDao superHeroeDao;
-	
-	
+
 	@Transactional(readOnly = true)
 	public Page<SuperHeroe> findAll(Pageable pageable) {
 		return superHeroeDao.findAll(pageable);

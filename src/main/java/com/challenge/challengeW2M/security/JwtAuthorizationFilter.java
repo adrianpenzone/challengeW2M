@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.challenge.challengeW2M.service.UserServiceImpl;
@@ -28,7 +28,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 			FilterChain filterChain) throws ServletException, IOException {
 		String authorizationHeader = httpServletRequest.getHeader(Constants.HEADER_AUTHORIZATION_KEY);
 
-		if (StringUtils.isEmpty(authorizationHeader) || !authorizationHeader
+		if (ObjectUtils.isEmpty(authorizationHeader) || !authorizationHeader
 				.startsWith(Constants.TOKEN_BEARER_PREFIX)) {
 			filterChain.doFilter(httpServletRequest, httpServletResponse);
 			return;

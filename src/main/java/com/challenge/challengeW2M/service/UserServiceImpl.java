@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.challenge.challengeW2M.domain.User;
 import com.challenge.challengeW2M.mapper.UserDetailsMapper;
-import com.challenge.challengeW2M.repository.RoleRepository;
 import com.challenge.challengeW2M.repository.UserRepository;
 
 

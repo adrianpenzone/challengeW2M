@@ -1,4 +1,4 @@
-package com.challenge.challengeW2M.model;
+package com.challenge.challengeW2M.domain;
 
 import java.io.Serializable;
 

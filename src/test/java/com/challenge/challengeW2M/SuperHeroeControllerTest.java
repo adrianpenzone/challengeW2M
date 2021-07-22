@@ -1,7 +1,6 @@
 package com.challenge.challengeW2M;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +9,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.challenge.challengeW2M.model.SuperHeroe;
+import com.challenge.challengeW2M.domain.SuperHeroe;
 
 public class SuperHeroeControllerTest extends AbstractTest {
 

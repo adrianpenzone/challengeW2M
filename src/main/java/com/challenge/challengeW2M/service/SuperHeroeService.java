@@ -9,39 +9,38 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.challenge.challengeW2M.annotation.TrackExecutionTime;
-import com.challenge.challengeW2M.dao.SuperHeroeDao;
-import com.challenge.challengeW2M.model.SuperHeroe;
+import com.challenge.challengeW2M.domain.SuperHeroe;
+import com.challenge.challengeW2M.repository.SuperHeroeRepository;
 
 @Service
 public class SuperHeroeService {
 	
 	@Autowired
-	private SuperHeroeDao superHeroeDao;
+	private SuperHeroeRepository superHeroeRepository;
 
 	@Transactional(readOnly = true)
 	public Page<SuperHeroe> findAll(Pageable pageable) {
-		return superHeroeDao.findAll(pageable);
+		return superHeroeRepository.findAll(pageable);
 	}
 	
 	@Transactional(readOnly = true)
 	public Optional<SuperHeroe> findById(Long id){
-		return superHeroeDao.findById(id);
+		return superHeroeRepository.findById(id);
 	}
 	
 	@Transactional(readOnly = true)
 	public List<SuperHeroe> findByNombreLike(String like){
-		return superHeroeDao.findByNombreContains(like);
+		return superHeroeRepository.findByNombreContains(like);
 	}
 	
 	@Transactional
 	public SuperHeroe modificar(SuperHeroe superHeroe) {
-		return superHeroeDao.save(superHeroe);
+		return superHeroeRepository.save(superHeroe);
 	}
 	
 	@Transactional
 	public void deleteById(Long id) {
-		superHeroeDao.deleteById(id);
+		superHeroeRepository.deleteById(id);
 	}
 
 }

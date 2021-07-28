@@ -1,7 +1,5 @@
 package com.challenge.challengeW2M.controller;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.challenge.challengeW2M.annotation.TrackExecutionTime;
 import com.challenge.challengeW2M.config.ApiPageable;
 import com.challenge.challengeW2M.domain.SuperHeroe;
-import com.challenge.challengeW2M.errorHandler.HeroeNotfoundException;
 import com.challenge.challengeW2M.service.SuperHeroeService;
 
 
@@ -38,12 +35,8 @@ public class SuperHeroeController {
 	
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<?> ver(@PathVariable Long id){
-		Optional<SuperHeroe> o = superHeroeService.findById(id);
-		if (o.isEmpty()) {
-			throw new HeroeNotfoundException();
-		}
-		return ResponseEntity.ok(o.get());
+	public ResponseEntity<?> ver(@PathVariable Long id){		
+		return ResponseEntity.ok(superHeroeService.findById(id));
 	}
 	
 	

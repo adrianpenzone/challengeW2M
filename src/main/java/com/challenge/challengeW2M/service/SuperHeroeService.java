@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.challenge.challengeW2M.domain.SuperHeroe;
+import com.challenge.challengeW2M.errorHandler.HeroeNotfoundException;
 import com.challenge.challengeW2M.repository.SuperHeroeRepository;
 
 @Service
@@ -24,8 +25,9 @@ public class SuperHeroeService {
 	}
 	
 	@Transactional(readOnly = true)
-	public Optional<SuperHeroe> findById(Long id){
-		return superHeroeRepository.findById(id);
+	public SuperHeroe findById(Long id){
+		Optional<SuperHeroe> o = superHeroeRepository.findById(id);		
+		return o.orElseThrow(() -> new HeroeNotfoundException());
 	}
 	
 	@Transactional(readOnly = true)
